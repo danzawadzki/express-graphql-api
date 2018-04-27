@@ -1,21 +1,20 @@
 type Playlist {
-  title: String!
-  songs: [Song]!
-  favorite: Boolean!
+	title: String!
+	songs: [Song]!
+	favorite: Boolean!
 }
 
-
 input UpdatedPlaylist {
-  id: ID!
-  title: String
-  songs: [NewSong]
-  favorite: Boolean
+	id: ID!
+	title: String
+	songs: [NewSong]
+	favorite: Boolean
 }
 
 extend type Query {
-  Playlist(id: ID!): Playlist!
+	Playlist(id: ID!): Playlist!
 }
 
 extend type Mutation {
-  updatePlaylist(input: UpdatedPlaylist): Playlist!
+	updatePlaylist(input: UpdatedPlaylist): Playlist!
 }

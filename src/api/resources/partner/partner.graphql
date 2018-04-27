@@ -1,0 +1,22 @@
+type Partner {
+	id: ID
+	name: String!
+}
+
+input UpdatePartner {
+	id: ID!
+	name: String!
+}
+
+input NewPartner {
+	name: String!
+}
+
+extend type Query {
+	Partner(id: ID!): Partner!
+	allPartners: [Partner]!
+}
+
+extend type Mutation {
+	newPartner(input: NewPartner!): Partner!
+}

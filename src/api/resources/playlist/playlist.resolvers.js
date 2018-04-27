@@ -1,18 +1,16 @@
-import { Playlist } from './playlist.model'
+import { Playlist } from './playlist.model';
 
-const getPlaylist = (_, __, {user}) => {
-  return user
-}
+const getPlaylist = (_, __, { user }) => {
+	return user;
+};
 
-const updatePlaylist = (_, {input}) => {
-
-}
+const updatePlaylist = (_, { input }) => {};
 
 export const songResolvers = {
-  Query: {
-    Playlist: getPlaylist
-  },
-  Mutation: {
-    updatePlaylist
-  }
-}
+	Query: {
+		Playlist: getPlaylist
+	},
+	Mutation: {
+		updatePlaylist
+	}
+};

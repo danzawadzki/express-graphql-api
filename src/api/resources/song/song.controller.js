@@ -1,4 +1,4 @@
-import { generateControllers } from '../../modules/query'
-import { Song } from './song.model'
+import { generateControllers } from '../../modules/query';
+import { Song } from './song.model';
 
-export default generateControllers(Song)
+export default generateControllers(Song);

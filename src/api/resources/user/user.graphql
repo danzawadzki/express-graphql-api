@@ -1,17 +1,17 @@
 type User {
-  username: String!
-  createdAt: String!
-  updatedAt: String!
+	username: String!
+	createdAt: String!
+	updatedAt: String!
 }
 
 input UpdatedUser {
-  username: String!
+	username: String!
 }
 
 type Query {
-  getMe: User!
+	getMe: User!
 }
 
 type Mutation {
-  updateMe(input: UpdatedUser!): User!
+	updateMe(input: UpdatedUser!): User!
 }

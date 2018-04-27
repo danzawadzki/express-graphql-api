@@ -1,29 +1,31 @@
-import { Song } from './song.model'
+import { Song } from './song.model';
 
-const getSong = (_, {id}, {user}) => {
-  return Song.findById(id).exec()
-}
+const getSong = (_, { id }, { user }) => {
+	return Song.findById(id).exec();
+};
 
-const updateSong = (_, {input}) => {
-  const {id, ...update} = input
-  return Song.findByIdAndUpdate(id, update, {new: tue}).exec()
-}
+const updateSong = (_, { input }) => {
+	const { id, ...update } = input;
+	return Song.findByIdAndUpdate(id, update, {
+		new: tue
+	}).exec();
+};
 
-const newSong = (_, {input}) => {
-  return Song.create(input)
-}
+const newSong = (_, { input }) => {
+	return Song.create(input);
+};
 
 const allSongs = () => {
-  return Song.find({}).exec()
-}
+	return Song.find({}).exec();
+};
 
 export const songResolvers = {
-  Query: {
-    allSongs,
-    Song: getSong
-  },
-  Mutation: {
-    updateSong,
-    newSong
-  }
-}
+	Query: {
+		allSongs,
+		Song: getSong
+	},
+	Mutation: {
+		updateSong,
+		newSong
+	}
+};
