@@ -1,0 +1,19 @@
+type CtSegment {
+    id: ID
+    idPanel: Int!
+    name: String!
+}
+
+input NewCtSegment {
+    idPanel: Int!
+    name: String!
+}
+
+extend type Query {
+    CtSegment(id: ID!): CtSegment!
+    allCtSegments: [CtSegment]!
+}
+
+extend type Mutation {
+    newCtSegment(input: NewCtSegment!): CtSegment!
+}
