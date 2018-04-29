@@ -1,0 +1,27 @@
+type PartnerSegment {
+	id: ID!
+	platformId: Int!
+	name: String!
+	partner: Partner
+}
+
+input NewPartnerSegment {
+	patformId: Int!
+	name: String!
+    partner: NewPartner
+}
+
+input EditPartnerSegment {
+	partnerId: Int
+	name: String
+    partner: NewPartner
+}
+
+extend type Query {
+	PartnerSegment(id: ID!): PartnerSegment!
+	allPartnerSegments: [PartnerSegment]!
+}
+
+extend type Mutation {
+	newPartnerSegment(input: NewPartnerSegment): PartnerSegment!
+}

@@ -4,6 +4,10 @@ import { songResolvers, songType } from './resources/song';
 import { playlistResolvers, playlistType } from './resources/playlist';
 import { ctSegmentResolvers, ctSegmentType } from './resources/ctSegment';
 import { partnerResolvers, partnerType } from './resources/partner';
+import {
+	partnerSegmentResolvers,
+	partnerSegmentType
+} from './resources/partnerSegment';
 import merge from 'lodash.merge';
 import { graphqlExpress } from 'apollo-server-express';
 
@@ -21,7 +25,8 @@ const schema = makeExecutableSchema({
 		songType,
 		playlistType,
 		partnerType,
-		ctSegmentType
+		ctSegmentType,
+		partnerSegmentType
 	],
 	resolvers: merge(
 		{},
@@ -29,7 +34,8 @@ const schema = makeExecutableSchema({
 		songResolvers,
 		playlistResolvers,
 		partnerResolvers,
-		ctSegmentResolvers
+		ctSegmentResolvers,
+		partnerSegmentResolvers
 	)
 });
 

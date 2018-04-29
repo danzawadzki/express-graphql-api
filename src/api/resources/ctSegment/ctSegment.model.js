@@ -16,7 +16,4 @@ const ctSegmentSchema = new mongoose.Schema(
 	{ timestamps: true }
 );
 
-export const CtSegment = mongoose.model(
-	'CtSegment',
-	ctSegmentSchema
-);
+export const CtSegment = mongoose.model('CtSegment', ctSegmentSchema);

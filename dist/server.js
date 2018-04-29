@@ -21,7 +21,7 @@ require("source-map-support").install();
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "19bfbc85f5dcf77c2b30"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d6ecbbd8a346082ad21d"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -837,10 +837,12 @@ if(true) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__resources_playlist__ = __webpack_require__("./src/api/resources/playlist/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__resources_ctSegment__ = __webpack_require__("./src/api/resources/ctSegment/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__resources_partner__ = __webpack_require__("./src/api/resources/partner/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_lodash_merge__ = __webpack_require__("lodash.merge");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_lodash_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_lodash_merge__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_apollo_server_express__ = __webpack_require__("apollo-server-express");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_apollo_server_express___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_apollo_server_express__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__resources_partnerSegment__ = __webpack_require__("./src/api/resources/partnerSegment/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_lodash_merge__ = __webpack_require__("lodash.merge");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_lodash_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_lodash_merge__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_apollo_server_express__ = __webpack_require__("apollo-server-express");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_apollo_server_express___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_apollo_server_express__);
+
 
 
 
@@ -853,11 +855,11 @@ if(true) {
 var baseSchema = '\n  schema {\n    query: Query\n    mutation: Mutation\n  }\n';
 
 var schema = Object(__WEBPACK_IMPORTED_MODULE_0_graphql_tools__["makeExecutableSchema"])({
-	typeDefs: [baseSchema, __WEBPACK_IMPORTED_MODULE_1__resources_user__["c" /* userType */], __WEBPACK_IMPORTED_MODULE_2__resources_song__["c" /* songType */], __WEBPACK_IMPORTED_MODULE_3__resources_playlist__["c" /* playlistType */], __WEBPACK_IMPORTED_MODULE_5__resources_partner__["b" /* partnerType */], __WEBPACK_IMPORTED_MODULE_4__resources_ctSegment__["b" /* ctSegmentType */]],
-	resolvers: __WEBPACK_IMPORTED_MODULE_6_lodash_merge___default()({}, __WEBPACK_IMPORTED_MODULE_1__resources_user__["a" /* userResolvers */], __WEBPACK_IMPORTED_MODULE_2__resources_song__["a" /* songResolvers */], __WEBPACK_IMPORTED_MODULE_3__resources_playlist__["a" /* playlistResolvers */], __WEBPACK_IMPORTED_MODULE_5__resources_partner__["a" /* partnerResolvers */], __WEBPACK_IMPORTED_MODULE_4__resources_ctSegment__["a" /* ctSegmentResolvers */])
+	typeDefs: [baseSchema, __WEBPACK_IMPORTED_MODULE_1__resources_user__["c" /* userType */], __WEBPACK_IMPORTED_MODULE_2__resources_song__["c" /* songType */], __WEBPACK_IMPORTED_MODULE_3__resources_playlist__["c" /* playlistType */], __WEBPACK_IMPORTED_MODULE_5__resources_partner__["b" /* partnerType */], __WEBPACK_IMPORTED_MODULE_4__resources_ctSegment__["b" /* ctSegmentType */], __WEBPACK_IMPORTED_MODULE_6__resources_partnerSegment__["b" /* partnerSegmentType */]],
+	resolvers: __WEBPACK_IMPORTED_MODULE_7_lodash_merge___default()({}, __WEBPACK_IMPORTED_MODULE_1__resources_user__["a" /* userResolvers */], __WEBPACK_IMPORTED_MODULE_2__resources_song__["a" /* songResolvers */], __WEBPACK_IMPORTED_MODULE_3__resources_playlist__["a" /* playlistResolvers */], __WEBPACK_IMPORTED_MODULE_5__resources_partner__["a" /* partnerResolvers */], __WEBPACK_IMPORTED_MODULE_4__resources_ctSegment__["a" /* ctSegmentResolvers */], __WEBPACK_IMPORTED_MODULE_6__resources_partnerSegment__["a" /* partnerSegmentResolvers */])
 });
 
-var graphQLRouter = Object(__WEBPACK_IMPORTED_MODULE_7_apollo_server_express__["graphqlExpress"])(function (req) {
+var graphQLRouter = Object(__WEBPACK_IMPORTED_MODULE_8_apollo_server_express__["graphqlExpress"])(function (req) {
 	return {
 		schema: schema,
 		context: {
@@ -1349,6 +1351,104 @@ var partnerResolvers = {
 	},
 	Mutation: {
 		newPartner: newPartner
+	}
+};
+
+/***/ }),
+
+/***/ "./src/api/resources/partnerSegment/index.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__partnerSegment_graphQLRouter__ = __webpack_require__("./src/api/resources/partnerSegment/partnerSegment.graphQLRouter.js");
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__partnerSegment_graphQLRouter__["a"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__partnerSegment_graphQLRouter__["b"]; });
+
+
+/***/ }),
+
+/***/ "./src/api/resources/partnerSegment/partnerSegment.graphQLRouter.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__partnerSegment_graphql__ = __webpack_require__("./src/api/resources/partnerSegment/partnerSegment.graphql");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__partnerSegment_graphql___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__partnerSegment_graphql__);
+/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__partnerSegment_graphql__; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__partnerSegment_resolvers__ = __webpack_require__("./src/api/resources/partnerSegment/partnerSegment.resolvers.js");
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__partnerSegment_resolvers__["a"]; });
+
+
+
+
+
+/***/ }),
+
+/***/ "./src/api/resources/partnerSegment/partnerSegment.graphql":
+/***/ (function(module, exports) {
+
+module.exports = "type PartnerSegment {\n\tid: ID!\n\tplatformId: Int!\n\tname: String!\n\tpartner: Partner\n}\n\ninput NewPartnerSegment {\n\tpatformId: Int!\n\tname: String!\n    partner: NewPartner\n}\n\ninput EditPartnerSegment {\n\tpartnerId: Int\n\tname: String\n    partner: NewPartner\n}\n\nextend type Query {\n\tPartnerSegment(id: ID!): PartnerSegment!\n\tallPartnerSegments: [PartnerSegment]!\n}\n\nextend type Mutation {\n\tnewPartnerSegment(input: NewPartnerSegment): PartnerSegment!\n}\n"
+
+/***/ }),
+
+/***/ "./src/api/resources/partnerSegment/partnerSegment.model.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PartnerSegment; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_mongoose__ = __webpack_require__("mongoose");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_mongoose___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_mongoose__);
+
+
+var partnerSegmentSchema = new __WEBPACK_IMPORTED_MODULE_0_mongoose___default.a.Schema({
+	platformId: {
+		type: Number,
+		unique: false,
+		required: [true, 'Partner segment must have partner system id.']
+	},
+	name: {
+		type: String,
+		required: [true, 'Segment must have name.']
+	},
+	partner: {
+		type: __WEBPACK_IMPORTED_MODULE_0_mongoose___default.a.Schema.Types.ObjectId,
+		ref: 'partner'
+	}
+}, { timestamps: true });
+
+var PartnerSegment = __WEBPACK_IMPORTED_MODULE_0_mongoose___default.a.model('PartnerSegment', partnerSegmentSchema);
+
+/***/ }),
+
+/***/ "./src/api/resources/partnerSegment/partnerSegment.resolvers.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return partnerSegmentResolvers; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__partnerSegment_model__ = __webpack_require__("./src/api/resources/partnerSegment/partnerSegment.model.js");
+
+
+var getPartnerSegment = function getPartnerSegment(_, _ref, _ref2) {
+	var id = _ref.id;
+	var user = _ref2.user;
+	return __WEBPACK_IMPORTED_MODULE_0__partnerSegment_model__["a" /* PartnerSegment */].findById(id).exec();
+};
+
+var allPartnerSegments = function allPartnerSegments(_, __, ___) {
+	return PartnerSegments.find({}).exec();
+};
+
+var newPartnerSegment = function newPartnerSegment(_, _ref3) {
+	var input = _ref3.input;
+	return __WEBPACK_IMPORTED_MODULE_0__partnerSegment_model__["a" /* PartnerSegment */].create(input);
+};
+
+var partnerSegmentResolvers = {
+	Query: {
+		allPartnerSegments: allPartnerSegments,
+		PartnerSegment: getPartnerSegment
+	},
+	Mutation: {
+		newPartnerSegment: newPartnerSegment
 	}
 };
 
