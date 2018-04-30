@@ -7,13 +7,15 @@ const partnerSegmentSchema = new mongoose.Schema(
 			unique: false,
 			required: [true, 'Partner segment must have partner system id.']
 		},
+
 		name: {
 			type: String,
 			required: [true, 'Segment must have name.']
 		},
+
 		partner: {
 			type: mongoose.Schema.Types.ObjectId,
-			ref: 'partner'
+			ref: 'Partner'
 		}
 	},
 	{ timestamps: true }

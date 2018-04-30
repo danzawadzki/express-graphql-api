@@ -1,9 +1,14 @@
 import { PartnerSegment } from './partnerSegment.model';
 
 const getPartnerSegment = (_, { id }, { user }) =>
-	PartnerSegment.findById(id).exec();
+	PartnerSegment.findById(id)
+		.populate('partner')
+		.exec();
 
-const allPartnerSegments = (_, __, ___) => PartnerSegments.find({}).exec();
+const allPartnerSegments = () =>
+	PartnerSegment.find({})
+		.populate('partner')
+		.exec();
 
 const newPartnerSegment = (_, { input }) => PartnerSegment.create(input);
 

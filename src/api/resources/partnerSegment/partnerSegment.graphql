@@ -1,20 +1,22 @@
 type PartnerSegment {
 	id: ID!
-	platformId: Int!
 	name: String!
+	platformId: Int!
 	partner: Partner
 }
 
+
 input NewPartnerSegment {
-	patformId: Int!
 	name: String!
-    partner: NewPartner
+	platformId: Int!
+	partner: ID!
+
 }
 
 input EditPartnerSegment {
-	partnerId: Int
 	name: String
-    partner: NewPartner
+	platformId: Int
+
 }
 
 extend type Query {
